@@ -1,51 +1,56 @@
-# ✨ Glow & Grace — Luxury Cosmetics & Beauty Portfolio Engine
+# 🩺 DoctorPro — Healthcare Management & Medical Practice Portal
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Design](https://img.shields.io/badge/Design-Glassmorphism-c99365?style=for-the-badge)
-![Status](https://img.shields.io/badge/Order_Tracking-Active-success?style=for-the-badge)
+![Design](https://img.shields.io/badge/UI%2FUX-Responsive-success?style=for-the-badge)
+![Storage](https://img.shields.io/badge/Data-LocalStorage_Engine-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-A client-side cosmetics brand portfolio, mini catalog, and comprehensive administrative portal. Designed with a luxury dark aesthetic, interactive dual-language (i18n) engine, integrated **Live Order Tracking**, and a complete **CRUD Admin Dashboard** powered entirely by Vanilla Web Standards.
-
----
-
-## 💎 Core Highlights
-
-### 🛍️ Client Experience (`index.html`)
-* **Luxury Glassmorphism Aesthetic:** Warm gold accents, animated gradient blobs, parallax 3D card tilt, and ambient loading screens.
-* **Dual-Language i18n Engine:** Seamless zero-reload toggle between **English 🇬🇧** and **বাংলা 🇧🇩** with full `localStorage` preference persistence.
-* **Instant Order Tracking Modal:** Real-time customer order tracking via **Order ID** (e.g., `ORD-731902`) or **Contact Phone Number**.
-* **Dynamic Product Catalog:** Real-time search, category filtering, discount indicators, and responsive quick-order triggers.
-* **Direct Multi-Channel Dispatch:** Direct order form processing alongside one-click automated **WhatsApp Order** message generators.
-* **Interactive Modules:** Expiring promotion countdown timers, lightbox masonry gallery, and touch-friendly testimonial carousels.
+A client-side healthcare management solution and doctor portfolio platform. Built with modern web standards, **DoctorPro** provides an interface for patient-facing interactions alongside a local administration panel. It operates without third-party frameworks, backend dependencies, or build tools.
 
 ---
 
-### ⚙️ Central Administrative Portal (`admin.html`)
-* **Complete Order Pipeline:**
-  * Real-time order capture with metric counters (Pending, Processing, Delivered, Cancelled).
-  * In-place order status switching with color-coded feedback.
-  * Comprehensive modal editor to adjust quantities, client names, phone numbers, prices, and shipping addresses.
-  * Deep inspection views and single-click order record deletion.
-* **Full CRUD Catalog Management:**
-  * 💄 **Products:** Full control over English/Bengali descriptions, prices, badges, and URL-based image links.
-  * 🗂️ **Categories:** Manage division cards, custom slug IDs, and collection covers.
-  * 🏷️ **Special Offers:** Set live promotional banners, countdown timers, and discount tags.
-  * 🖼️ **Visual Diary Gallery:** URL-based image curation with masonry height controls.
-  * 💬 **Customer Reviews:** Add and moderate verified client reviews, avatars, and star ratings.
-  * 🌐 **Brand & Contact Desk:** Synchronize corporate contact numbers, WhatsApp APIs, and brand stories across the storefront.
-* **Robust Local State Engine:** Resilient, centralized `localStorage` pipeline that automatically loads demo fixtures if storage is empty.
+## ⚡ Core Capabilities
+
+### 🌐 Patient-Facing Portal (`index.html`)
+* **Clinical Overview:** Showcase doctor biographies, clinical specializations, service tiers, consulting hours, and hospital/chamber affiliations.
+* **Responsive Architecture:** Built using CSS grid/flexbox layouts and dedicated media queries (`responsive.css`).
+* **Interactive UI Layers:** Includes animated counters, appointment consultation forms, and modal interactions handled by `app.js`.
+* **Dynamic Theme Toggle:** Native dark/light mode switching driven by `theme.js` with preference memory.
+* **Multi-Language (i18n):** Client-side translation system powered by `language.js`.
 
 ---
 
-## 📂 Project Architecture
+### 🛠️ Administrative Dashboard (`admin.html`)
+* **Local Data Management:** Powered by `storage.js` to manage doctor schedules, consultation fees, and service catalogs inside browser `localStorage`.
+* **Preloaded Datasets:** Initializes with structured medical records via `default-data.js`[cite: 8].
+* **Configuration Controls:** Update contact information, address details, and clinic hours in real time[cite: 8].
+* **Zero Backend Footprint:** Fully functional offline and on static hosting environments[cite: 8].
+
+---
+
+## 📁 System Architecture & Directory Map
 
 ```text
-├── index.html        # Client-facing Luxury Storefront & Order Tracking Modal
-├── style.css         # Design Tokens, Gold Glassmorphism, Layouts & Animations
-├── script.js         # Client Controller, i18n Engine, Tracking Logic & State Sync
-├── admin.html        # Complete Admin Management Dashboard Interface
-├── admin.css         # Admin Dark Velvet Theme, Modals, & Data Tables
-├── admin.js          # Admin CRUD Pipelines, Order Controller & Data Store
-└── README.md         # Documentation & Deployment Guide
+doctorpro/
+│
+├── index.html                      # Patient-facing portal and landing page
+├── admin.html                      # Central administrative control panel
+├── README.md                       # Comprehensive documentation
+│
+├── assets/
+│   ├── css/
+│   │   ├── style.css               # Core styling and component design
+│   │   ├── admin.css               # Dashboard layout and data controls
+│   │   └── responsive.css          # Breakpoint-specific media queries
+│   │
+│   └── js/
+│       ├── app.js                  # Frontend interactions and DOM controllers
+│       ├── admin.js                # Dashboard CRUD handlers and dashboard state
+│       ├── theme.js                # Dark/Light mode engine
+│       ├── language.js             # Translation dictionaries and i18n controller
+│       └── storage.js              # LocalStorage abstraction layer
+│
+└── data/
+    └── default-data.js             # Initial mock data and schema configuration
